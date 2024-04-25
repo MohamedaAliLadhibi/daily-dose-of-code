@@ -39,3 +39,17 @@ var phoneDigitsToLetters = {
   8: 'TUV',
   9: 'WXYZ'
 };
+
+
+var telephoneWords = function(digitString) {
+  // TODO: return every combination that can be spelled on a phone with these digits
+  var generateWords = function(currentIndex, currentWord) {
+    if (currentIndex === digitString.length) {
+      result.push(currentWord)}
+    var currentDigit = digitString[currentIndex];
+
+    for (var i = 0; i < letters.length; i++) {
+      generateWords(currentIndex + 1, currentWord + currentDigit[i]);
+    }
+  };
+};
