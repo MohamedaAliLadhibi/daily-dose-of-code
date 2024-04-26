@@ -11,3 +11,32 @@
     ]);
     returns [1, 2, 3, 6, 9, 8, 7, 4, 5]
  */
+
+
+
+
+    var spiralTraversal = function(matrix){
+      const res = []
+      while (matrix.length > 0) {
+        results.push(matrix.shift())
+        if (matrix.length > 0) {
+          for (let i = 0; i < matrix.length; i++) {
+            const val = matrix[i].pop();
+            if (val !== undefined) {
+              results.push(val);
+            }
+          }
+        }
+        if (matrix.length > 0) {
+          for (let i = matrix.length - 1; i > 0; i--) {
+            const val = matrix[i].shift();
+            if (val !== undefined) {
+              results.push(val);
+            }
+          }
+        }
+        
+      }
+    return res
+      // TODO: Implement me!
+    };
