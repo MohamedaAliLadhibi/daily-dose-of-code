@@ -42,3 +42,12 @@
 *  - Make your function operate on rectangular matrices (MxN rather than NxN).
 *  - Make your function accept a parameter for the direction of rotation (1 = clockwise, -1 = counterclockwise)
 */
+
+var rotateMatrix = function(matrix) {
+          for (let i = 0; i < matrix.length; i++) {
+              for (let j = i; j < matrix[0].length; j++) {
+                  [matrix[i][j], matrix[j][i]] = [matrix[j][i], matrix[i][j]];
+              }
+          }     
+          return matrix;
+    };
