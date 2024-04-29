@@ -15,3 +15,18 @@
 *
 * Example:
 * rockPaperScissors(5); // => ['RRRRR', 'RRRRP', 'RRRRS', etc...]
+*
+* @function rockPaperScissors
+* @param {Number} rounds - number of throws
+* @return {Array<string>}
+*/
+
+var rockPaperScissors = function (rounds) {
+    var rounds = rounds || 3;
+     var throws = ["R", "P", "S"];
+     var row = []
+     for (let i = 0; i < throws.length ; i++ ){
+      
+     }
+  }
+  
