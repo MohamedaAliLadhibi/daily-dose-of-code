@@ -7,7 +7,21 @@
  * @param {Number} n - number to tested
  * @return {Boolean} - prime or not?
 
+ const primeTester = function(n) {
+  if (typeof n !== 'number' || n < 2 || n % 1 !== 0) {
+    return false;
+  } else {
+    if (n === 2) {
+      return true; 
+    }
 
+    if (n % 2 === 0  || n % 3 === 0 || n % 5 === 0 || n % 7 === 0  ) {
+      return false; 
+    }
+
+    return true;
+  }
+};
 
 
 /**
