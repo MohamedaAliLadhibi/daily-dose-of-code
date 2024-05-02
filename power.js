@@ -18,3 +18,20 @@
  */
 
 
+var powerSet = function(str){
+    var result = [];
+    var n = str.length;
+    for (var i = 0; i < n; i++) {
+        var set = '';
+        for (var j = 0; j < n; j++) {
+            if (i & (1 << j)) {
+                set += str[j];
+            }
+        }
+        result.push(set);
+    }
+
+    return result;
+
+
+}
