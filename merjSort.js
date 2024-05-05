@@ -116,7 +116,10 @@ const merging= function(left, right) {
 
 const mergeSort = function(array) {
   // Your code here.
-
+  const middle= Math.floor(array.length/2)
+const leftM = array.slice(0, middle)
+const rightM = array.slice( middle);
+return merging(mergeSort(leftM),mergeSort(rightM ))
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
