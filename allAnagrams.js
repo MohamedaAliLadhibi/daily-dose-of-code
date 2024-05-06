@@ -16,6 +16,16 @@
  * @return {Array<String>}
  */
 var allAnagrams = function(string) {
-    // Your code here.
+  // Your code here.
+  var result = []
+  for (let i = 0; i < string.length; i++) {
+    for(let j = 0; i<string.length; j++){
+      for(let k =0; k<string.length; k++){
+        result.push(string)
+      //or we make another function to create ll anagams b recursion 
 
-  };
+      }
+    }
+  }
+  return result
+};
