@@ -38,13 +38,25 @@
 * @return {void} - does not return anything
 */
 const asyncMap = function(tasks, callback) {
+    const results = [];
+    let tasksDone = 0;
 
+    for (let i = 0; i < tasks.length; i++) {
+        (function(i) {
+            tasks[i](function(result) {
+                results[i] = result;
+                tasksDone++;
+
+                if (tasksDone === tasks.length) {
+                    callback(results);
+                }
+            });
+        })(i);
+    }
 };
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//ignore the below code // //
-
-module.exports = asyncMap;
 
 // // // // // // // // // //
