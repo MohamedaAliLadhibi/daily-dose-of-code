@@ -16,7 +16,20 @@
 */
 
 var commonCharacters = function(string1, string2) {
-    // TODO: Your code here!
+    let commonStr = '';
+        for (let i = 0; i < string1.length; i++) {
+        const char = string1[i];
+                if (char !== ' ' && commonStr.indexOf(char) === -1) {
+            if (string2.indexOf(char) !== -1) {
+                commonStr += char;
+            }
+        }
+    }
+    
+    return commonStr;
+};
 
-   };
+// Test the function
+console.log(commonCharacters('acexivou', 'aegihobu')); 
+
     
