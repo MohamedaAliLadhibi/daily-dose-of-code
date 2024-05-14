@@ -9,5 +9,14 @@
  * console.log(onlyEven); //  4
 */
 var evenOccurrence = function(arr) {
-
-};
+    for (let i = 0; i < arr.length; i++) {
+      var currentEle = arr[i]
+      var FIn = arr.indexOf(currentEle)
+      var LIn = arr.lastIndexOf(currentEle)
+      if (FIn % 2=== 0 && FIn=== LIn) {
+        return currentEle
+      }
+    }
+    return undefined
+  };
+  
