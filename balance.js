@@ -13,7 +13,18 @@
 const isBalanced = function (str) {
 
     var conterr = 0
-
+    for (let char of str){
+        if (char === '('){
+            conterr++
+        }
+        else if(char === ')'){
+            conterr--
+            if (conterr < 0 ){
+                return false
+            }
+        }
+    }
+    return true
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //ignore the below code // //
