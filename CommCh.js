@@ -16,6 +16,18 @@
 
 var commonCharacters = function(string1, string2) {
     // TODO: Your code here!
+    const commonStr = ''
+    for (let i = 0; i < string1.length; i++) {
+      const char = string1[i]
+    }
+    if (string2.indexOf(char) !== -1) {
+       commonStr += char
+     }
+     if (char === ' ' || commonStr.indexOf(char) !== -1){
+       
+     } 
+   
+   return commonStr
 
    };
     
