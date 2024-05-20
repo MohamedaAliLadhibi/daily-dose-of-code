@@ -17,6 +17,29 @@
 // makeChange(2) === 2
 // */
 
-var makeChange = function(total){
-
+var makeChange = function(total) {
+    // Define the coin denominations in pence
+    const coins = [1, 2, 5, 10, 20, 50, 100, 200];
+    
+    // Initialize an array to store the number of ways to make each amount
+    const ways = Array(total + 1).fill(0);
+    
+    // There is one way to make 0 amount (using no coins)
+    ways[0] = 1;
+    
+    // Update the ways array for each coin
+    for (const coin of coins) {
+        for (let amount = coin; amount <= total; amount++) {
+            ways[amount] += ways[amount - coin];
+        }
+    }
+    
+    // The number of ways to make the specified total amount
+    return ways[total];
 };
+
+// Example usage
+console.log(makeChange(1));  // Output: 1
+console.log(makeChange(2));  // Output: 2
+console.log(makeChange(200)); // Output: Number of ways to make £2 (200p)
+
