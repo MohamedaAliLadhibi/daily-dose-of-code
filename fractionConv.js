@@ -17,7 +17,27 @@
 const findCommonFactor = (a, b) => (b === 0 ? a : findCommonFactor(b, a % b));
 
 const toFraction = function (number) {
-
+    if (number === 0) {
+        return '0/1';
+    }
+    
+    if (Number.isInteger(number)) {
+        return `${number}/1`;
+    }
+    
+    const str = number.toString();
+    const decimalPlaces = str.length - str.indexOf('.') - 1;
+    
+    const denominator = Math.pow(10, decimalPlaces);
+    const numerator = Math.round(number * denominator);
+    
+    const gcd = findCommonFactor(numerator, denominator);
+    
+    const simpleNumerator = numerator / gcd;
+    const simpleDenominator = denominator / gcd;
+    
+    return `${simpleNumerator}/${simpleDenominator}`;
 };
+
 
 
