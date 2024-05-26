@@ -6,23 +6,10 @@
  * @function primeTester
  * @param {Number} n - number to tested
  * @return {Boolean} - prime or not?
-
- const primeTester = function(n) {
-  if (typeof n !== 'number' || n < 2 || n % 1 !== 0) {
-    return false;
-  } else {
-    if (n === 2) {
-      return true; 
-    }
-
-    if (n % 2 === 0  || n % 3 === 0 || n % 5 === 0 || n % 7 === 0  ) {
-      return false; 
-    }
-
-    return true;
-  }
+ */
+const primeTester = function(n) {
+  
 };
-
 
 /**
  * Extra credit: Write a function that generates a list of all prime numbers
@@ -36,7 +23,21 @@
  * @return {Array<Number>} - Primes in between
  */
 const primeSieve = function (start, end) {
+    if (typeof n !== 'number' || n < 2 || n % 1 !== 0) {
+        return false;
+      } else {
+        if (n === 2) {
+          return true; 
+        }
+    
+        if (n % 2 === 0  || n % 3 === 0 || n % 5 === 0 || n % 7 === 0  ) {
+          return false; 
+        }
+    
+        return true;
+      }
 
+      
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
