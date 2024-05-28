@@ -38,28 +38,35 @@
 
 //DON'T use .SORT() built-in function
 var testingTransform = function(array) {
- var transform = [];
+  var transform = [];
+  
+  for (var i = 0; i < array.length; i++) {
+    transform.push({value: array[i], i: i});
+  }
  
- for (var i = 0; i < array.length; i++) {
-   transform.push({value: array[i], i: i});
+  return transform;
+ };
+ 
+ 
+ /**
+ * @function insertionSort
+ * @param {Array} array
+ * @return {Array}
+ */
+ const insertionSort = function(array) {
+ for (let i = 1; i < array.length; i++) {
+   const current = array[i];
+   for (j = i - 1;  array[j].value > current.value; j--) {
+     array[j] = current + 1
+   }
  }
-
- return transform;
-};
-
-
-/**
-* @function insertionSort
-* @param {Array} array
-* @return {Array}
-*/
-const insertionSort = function(array) {
-
-
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//ignore the below code // // // // // // // // // // /////////////////////////////////////////
-module.exports.insertionSort = insertionSort; // // // //////////////////////////////
-module.exports.testingTransform = testingTransform; // // // ////////////////
-// // // // // // // // // / // // // // // // // // // // ////////////
+ return array;
+ 
+ }
+ 
+ ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ //ignore the below code // // // // // // // // // // /////////////////////////////////////////
+ module.exports.insertionSort = insertionSort; // // // //////////////////////////////
+ module.exports.testingTransform = testingTransform; // // // ////////////////
+ // // // // // // // // // / // // // // // // // // // // ////////////
+ 
